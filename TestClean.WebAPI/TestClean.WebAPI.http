@@ -1,0 +1,6 @@
+@TestClean.WebAPI_HostAddress = http://localhost:5277
+
+GET {{TestClean.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
