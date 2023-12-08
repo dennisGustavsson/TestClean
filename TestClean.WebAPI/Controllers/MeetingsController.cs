@@ -30,5 +30,14 @@ namespace TestClean.WebAPI.Controllers
             return Created("", _meeting);
 
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllMeetings()
+        {
+            var meetings = await _meetingService.GetAllMeetingsAsync();
+            if (meetings == null)
+                return BadRequest("There is no meetings");
+            return Ok(meetings);
+        }
     }
 }

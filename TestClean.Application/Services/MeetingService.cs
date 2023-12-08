@@ -31,4 +31,24 @@ public class MeetingService : IMeetingService
 
         return null!;
     }
+
+    public async Task<List<MeetingDto>> GetAllMeetingsAsync()
+    {
+
+        List<MeetingDto> list = new();
+
+        foreach(var item in await _meetingRepo.GetAllAsync())
+        {
+            MeetingDto dto = new()
+            {
+                Title = item.Title,
+                StartTime = DateTime.Now,
+                EndTime = DateTime.Now,
+            };
+            list.Add(dto);
+
+        }
+        return list;
+
+    }
 }
