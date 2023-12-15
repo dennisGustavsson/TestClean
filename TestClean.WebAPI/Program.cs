@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
 
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
