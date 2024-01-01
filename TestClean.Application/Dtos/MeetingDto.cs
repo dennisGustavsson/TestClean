@@ -4,6 +4,7 @@ namespace TestClean.Application.Dtos
 {
     public class MeetingDto
     {
+        public int Id { get; set; }
         public string Title { get; set; } = null!;
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }

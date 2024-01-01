@@ -19,9 +19,4 @@
     <ProjectReference Include="..\TestClean.Domain\TestClean.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Meeting\QueryHandlers\" />
-    <Folder Include="Meeting\Queries\" />
-  </ItemGroup>
-
 </Project>

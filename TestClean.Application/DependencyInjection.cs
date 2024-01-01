@@ -1,11 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using TestClean.Application.Interfaces;
-using TestClean.Application.Meeting.CommandHandlers;
 using TestClean.Application.Meeting.Commands;
 using TestClean.Application.Services;
-using MediatR;
-using TestClean.Domain.Entities;
-using System.Net.NetworkInformation;
+
 
 namespace TestClean.Application
 {
@@ -13,8 +10,10 @@ namespace TestClean.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services) {
             services.AddScoped<IMeetingService, MeetingService>();
-            services.AddMediatR(cfg =>
-     cfg.RegisterServicesFromAssembly(typeof(CreateMeeting).Assembly));
+/*            services.AddMediatR(cfg =>
+     cfg.RegisterServicesFromAssembly(typeof(CreateMeeting).Assembly));*/
+            var assembly = typeof(DependencyInjection).Assembly;
+            services.AddMediatR(configuration => configuration.RegisterServicesFromAssembly(assembly));
 
 
             return services;

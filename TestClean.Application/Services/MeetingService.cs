@@ -41,6 +41,7 @@ public class MeetingService : IMeetingService
         {
             MeetingDto dto = new()
             {
+                Id = item.Id,
                 Title = item.Title,
                 StartTime = DateTime.Now,
                 EndTime = DateTime.Now,

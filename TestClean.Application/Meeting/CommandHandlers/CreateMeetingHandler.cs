@@ -1,6 +1,5 @@
-﻿using AutoMapper;
+﻿
 using MediatR;
-using Microsoft.EntityFrameworkCore.Metadata;
 using TestClean.Application.Dtos;
 using TestClean.Application.Meeting.Commands;
 using TestClean.Domain.Entities;
@@ -30,6 +29,7 @@ public class CreateMeetingHandler : IRequestHandler<CreateMeeting, MeetingDto>
         //mapping
         var meetingDto = new MeetingDto
         {
+            Id = meeting.Id,
             Title = meeting.Title,
             StartTime = meeting.StartTime,
             EndTime = meeting.EndTime,

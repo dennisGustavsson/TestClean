@@ -16,9 +16,10 @@ namespace TestClean.Infrastructure
             // Add database context
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<IdentityContext>(options => options.UseSqlServer(configuration.GetConnectionString("IdentityConnection")));
 
             // Add repositories
-            services.AddScoped< IMeetingRepository, MeetingRepository>();
+            services.AddScoped<IMeetingRepository, MeetingRepository>();
             // Add other repositories...
 
             return services;
